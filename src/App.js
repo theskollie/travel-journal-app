@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from './components/Nav'
+import content from './content.js'
+import Location from './components/Location'
 
-function App() {
+export default function App() {
+  
+  const locations = content.map(item => {
+    return (
+      <Location 
+        item= {item} />
+    )
+    })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Nav />
+      <section>
+      {locations}
+      </section>
     </div>
-  );
+  )
 }
-
-export default App;
